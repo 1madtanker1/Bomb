@@ -1,0 +1,7 @@
+The creator of this project was Darkc0de (or my github username 1madtanker1)
+
+I am a young python developer who also is learning ethical hacking. I strive to be proficient in both of these skillsets, and I mostly upload python projects I do to github for records
+and to add to my job resumes. I am also either planning to or currently taking python courses online for adding to my resume. 
+
+I primarily focus on creating python projects that involve networking in python. 
+
