@@ -53,7 +53,8 @@ print(a)
 print("Here are your options:")
 print("1 = Preform a Wifi scan to find network devices")
 print("2 - Scan a port")
-print("3 - Read credits")
+print("3 - DOS attack an IP")
+print("4 - Read credits")
 
 num = input("Enter your chosen option > ")
 #DDOS ATTACK
@@ -65,10 +66,16 @@ elif int(num) == 1:
 elif int(num) == 2:
       os.system('clear')
       os.system('sudo python3 portscanner.py')
-
+      
 elif int(num) == 3:
+      os.system('clear')
+      os.system('sudo python3 dos.py')
+
+elif int(num) == 4:
       os.system('vim credits.txt')
       
 else:
     print("You entered an invalid number, please restart the script")
+
+
 
