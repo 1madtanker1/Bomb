@@ -1,6 +1,5 @@
-# hacker2.py
+Network Exploitation toolkit is a hackers special toolkit for network related attacks. These include: Port scanning, vulnerability scanning, Dos/DDos attacks, Wifi scanning and wifi deauthentication.
 
-Bomb is a hackers special tool for networking. it allows a hacker to scan the ports of a device, scan a device for vulnerabilities, execute a DOS attack on a wifi network, and much more.
-I also added a larger description of bomb in the credits.txt file. As of right now, I have not added all of the different abilities in Bomb, there is just a port scanner, a wifi scanner
-and an nmap scanner as of 12/31.
+I started working on this project in December 2021, and so far I have added a Port Scanner, Dos/DDos, and wifi scanning/deauthentication modules of this toolkit. 
 
+If you want to use this toolkit in a video or for a hacking project you are more then welcome too. However, if you comitt a crime using my software, I am not responsible for any civil or criminal charges resulting from the crime.
