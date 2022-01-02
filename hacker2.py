@@ -43,7 +43,7 @@ print("3 - DOS/DDOS ATTACKS")
 num = input("Enter your chosen option > ")
 #DDOS ATTACK
 #NETWORK SCAN
-elif int(num) == 1:
+if int(num) == 1:
       os.system('clear')
       os.system('sudo python3 wifiattacks.py')
       
