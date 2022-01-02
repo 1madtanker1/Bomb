@@ -72,7 +72,7 @@ if op =="1":
     print(output)
    
 elif op =="2":
-    print("\n Bomb will now return to the main menu")
+    print("\n NET will now return to the main menu")
     os.system('clear')
     os.system('sudo python3 hacker2.py')
 
