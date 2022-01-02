@@ -49,7 +49,7 @@ elif int(num) == 1:
       
 elif int(num) == 2:
       os.system('clear')
-      os.system('sudo python3 portscanner.py')
+      os.system('sudo python3 scanner.py')
       
 elif int(num) == 3:
       os.system('clear')
