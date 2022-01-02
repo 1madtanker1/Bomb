@@ -9,59 +9,43 @@ import socket
 
 
 a = """
-
-NmNMNmNMNNMMNNMMmNMMmNMNmNMNmNMNmNMNmNMNmNMNmNMmmNMNNMMNNMMmNMNmmMNmNMNmNMNmNMNmNMNmNMNmNMNNMMNNMMNN
-NMNmNMNmMMNmMMNNMMmNMMmNMNmNMNmNMNmNNmhhhysssssosysyhddNNmNMMmdyshmMNmNMNmNMNmNMNmNMNmNMNmNMNmMMNNMM
-NmNMNmNMNmMMNmMMmNMMmNMMmNMNmNMNdyyo++/+++/++//++//++//+osyddy+++/odNMNmNMmysyyymMNmNMNmNMNmMMNmMMmN
-NMNmNMNmMMNmMMmmMMmNMMmNMMmNNhs+/+++/+++/++//++//++//++//++/+++/+++/odNNo-......./yMNmNMNmNMNmMMmmMM
-NmNMNmMMNmMMNmMMmmMMmNMMmmho++//++/+++/+++/+++/+++/+++/+++/++//++//++/o-...........:hMNmNMNmMMNmMMmm
-NMNmNMNmMMNmMMNmMMmmMMmdy+++//++/+++/+++/+++/+++/+++/+++/++//++//++//++/:-/hmmmo-..../hMNmNMNmMMNmMM
-NmNMNmNMNmMMNmMMNmMMNds+++//++/+++/+++/+++/+++/+++/+++/++//++//++//++//++/sdNMNmmo-..../hMNmNMNmMMNm
-NMNmNMNmNMNmNMNmMMNmy+++//++/+++/+++/+++/+++/+++/+++/++//++//++//++//++/++++ydNMNmd+....-/dMNmNMNmMM
-NmNMNmNMNmNMNmNMNmmo++//++/+++/+++/+++/+++/+++/+++/++//++//++//++//++/+++/++++ydNMNmd+....-+dMNmNMNm
-NMNmNMNmNMNmNMNmNd++//++/+++/+++/+++/+++/+++/+++/++//++//++//++//++/+++/+++/+++smmNMNmd/...-omNMNmNM
-NmNMNmNMNmNMNmNMh+//++//++//++//++//++//++//++/++//++//++//++//++//++//++//++oymNMNmNMNmh/+hNMNmNMNm
-NMNmNMNmNMNmNMNh+/+++/+++/++//++//++//++//++/+++/+++/+++/+++/+++/+++/++//++/+dNMNmNMNmNMNmNMNmNMNmNM
-NmNMNmNMNmNMNmm++++/+++/++//++//++//++//++/+++/+++/+++/+++/+++/+++/++//++//++yNmNMNmNMNmNMNmNMNmNMNm
-NMNmNMNmNMNmNMs++/+++/++//++//++//++//++/+++/+++/+++/+++/+++/+++/++//++//++//+dMNmNMNmNMNmNMNmNMNmNM
-NmNMNmNMNmNMNh+/+++/++/:------://+//-------:///+++/+++/+++/+++//:--:///++//++/omNMNmNMNmNMNmNMNmNMNm
-NMNmNMNmNMNmNs+++/++//+-        ./+/        `-/+/+++/+++/+++//`     `:+//++//++mMmNMNmNMNmNMNmNMNmNM
-MmNMNmNMNmNMN++/++//++/.  .:::-   //   ::::`  .+++/+++/+++/+/`  -:-   /++//++/+yNMMmNMNmNMNmNMNmNMNm
-NMNmNMNmNMNmd/+++/+++/+-  .++/+`  :/   ///+:  `+//-.`  `.:++/`  -:///+++/++//++sMmNMNmNMNmNMNmNMNmNM
-NmNMNmNMNmNMd++/+++/+++.  ./+++`  -/   /++/:  `//`  `..`  ./+:`     .//++//++//sNMMmNMNmNMNmNMNmNMNm
-NMNmNMNmNMNmd/+++/+++/+-  .++/+`  :/   ///+:  `+-  .////`  :/+//:-.  `///++//++sMmNMNmNMNmNMNmNMNmNM
-NmNMNmNMNmNMm++/+++/+++.  .///:   :/   ////.  .+:  `://:   :/.``:/:`  :++//++//sNMMNNMNmNMNmNMNmNMNm
-NMNmNMNmNMNmNo+++/+++/+-   ```  `-+/   ````  ./+/-`  ``  `-//-`  ``  .///++//++dMNNMNNNMNmNMNmNMNmNM
-MNNMNNNMNmNMNy+/+++/+++-.......:/+//.......-://++//-....://+++/-...-://++//++/+mNMMNNMNNNMNmNMNmNMNm
-NMNNNMNmNMNmNN+++//++/++//++//++//++//++//++//++//++//++//++//+//++//++//++//+yNMNNMMNNMNNNMNmNMNmNM
-MNNMMNNMNmNMNmh+/++/+++/+++/+++/+++/+++/+++/++//++//++//++//++/+++/+++/+++/++oNNNNMNNMMNNMNmNMNmNMNm
-NMMNNMMmNMNmNMNs+/+++/+++/+++/+++/+++/+++/++//++//++//++//++/+++/+++/+++/++++dmNMNNMMNNMMNNMNmNMNmNM
-MNNMMNNMMmNMNmNNs++/+++/+++/+++/+++/+++/++//++//++//++//++/+++/+++/+++/+++/+hNMNmNMNNMMNNMMmNMMmNMNm
-mMMNNMMmNMMmNMMmms+++/+++/+++/+++/+++/++//++//++//++//++/+++/+++/+++/+++/++dMNmNMNmMMNmMMNNMMmNMMmNM
-MNmMMmmMMmNMMmNMMmy++++/+++/+++/+++/++//++//++//++//++/+++/+++/+++/+++/++omNmNMNmNMNmMMNmMMmNMMmNMMm
-mMMNmMMmmMMmNMMmNMMho/+++/+++/+++/++//++//++//++//++/+++/+++/+++/+++/+++ymmNMNmNMNmMMNmMMmmMMmNMMmNM
-MNmMMNmMMmmMMmNMMmNMNy+//++/+++/+++/+++/+++/+++/++//++//++//++//++/+++sdmNMNmNMNmMMNmMMNmMMmmMMmNMMm
-mMMNmMMNmMMmNMMmNMNmNMNy+/+++/+++/+++/+++/+++/++//++//++//++//++/+++sdmNMNmNMNmNMNmMMNmMMNmMMmmMMmNM
-MNmMMNmMMNNMMmNMMmNMNmNMNys++++/+++/+++/+++/++//++//++//++//++/+++ydmNMNmNMNmNMNmNMNmMMNmMMNmMMNNMMm
-mNMNmMMNmMMNNMMNNMNmNMNmNMNdho+++/+++/+++/++//++//++//++//++/+osdmmNMNmNMNmNMNmNMNmNMNmNMNmMMNNMMNNM
-MNmNMNmNMNNMMNNMMNNMNmNMNmNMNmmdso+++++/++//++//++//++//++ooydNNmNMNmNMNmNMNmNMNmNMNmNMNmNMNmMMNNMMN
-mNMNmNMNmNMNNMMNNMNNNMNmNMNmNMNmNNmddyssoo+++++++++oooshdmmmMNNNMNmNMNmNMNmNMNmNMNmNMNmNMNmNMNNMMNNM
-MNmNMNmNMNNNMNNMMNNMNNNMNmNMNmNMNmNMNmNMmdmmddmmddNNmmNMNNMMNNMNNNMNmNMNmNMNmNMNmNMNmNMNmNMNmNMNNNMN
-
+NNNNNNNN        NNNNNNNNEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTTTTTTT
+N:::::::N       N::::::NE::::::::::::::::::::ET:::::::::::::::::::::T
+N::::::::N      N::::::NE::::::::::::::::::::ET:::::::::::::::::::::T
+N:::::::::N     N::::::NEE::::::EEEEEEEEE::::ET:::::TT:::::::TT:::::T
+N::::::::::N    N::::::N  E:::::E       EEEEEETTTTTT  T:::::T  TTTTTT
+N:::::::::::N   N::::::N  E:::::E                     T:::::T        
+N:::::::N::::N  N::::::N  E::::::EEEEEEEEEE           T:::::T        
+N::::::N N::::N N::::::N  E:::::::::::::::E           T:::::T        
+N::::::N  N::::N:::::::N  E:::::::::::::::E           T:::::T        
+N::::::N   N:::::::::::N  E::::::EEEEEEEEEE           T:::::T        
+N::::::N    N::::::::::N  E:::::E                     T:::::T        
+N::::::N     N:::::::::N  E:::::E       EEEEEE        T:::::T        
+N::::::N      N::::::::NEE::::::EEEEEEEE:::::E      TT:::::::TT      
+N::::::N       N:::::::NE::::::::::::::::::::E      T:::::::::T      
+N::::::N        N::::::NE::::::::::::::::::::E      T:::::::::T      
+NNNNNNNN         NNNNNNNEEEEEEEEEEEEEEEEEEEEEE      TTTTTTTTTTT      
+                                                                    
 """
 print(a)
+
+b = """
+NETWORKING EXPLOITATION TOOLKIT
+
+DESIGNED BY DARKC0DE
+"""
 print("Here are your options:")
-print("1 = Preform a Wifi scan to find network devices")
-print("2 - Scan a port")
-print("3 - DOS attack an IP")
-print("4 - Read credits")
+print("1 = WIFI ATTACKS")
+print("2 - PORT AND VULNERABILITY SCANNING")
+print("3 - DOS/DDOS ATTACKS")
+
 
 num = input("Enter your chosen option > ")
 #DDOS ATTACK
 #NETWORK SCAN
 elif int(num) == 1:
       os.system('clear')
-      os.system('sudo python3 wifiscan.py')
+      os.system('sudo python3 wifiattacks.py')
       
 elif int(num) == 2:
       os.system('clear')
@@ -70,12 +54,10 @@ elif int(num) == 2:
 elif int(num) == 3:
       os.system('clear')
       os.system('sudo python3 dos.py')
-
-elif int(num) == 4:
-      os.system('vim credits.txt')
       
 else:
     print("You entered an invalid number, please restart the script")
+
 
 
 
